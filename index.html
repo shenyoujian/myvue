@@ -14,10 +14,17 @@
       el:'#app',
       data() {
         return {
-          name:'ljs'
+          person:{
+            name:'ljs'
+          }
         }
       }
     })
+
+    // console.log(vm._data.person.name)
+    vm._data.person.name = {lastName:'li',firstName:'jiansheng’'}
+    vm._data.person.name.lastName = 'lan'
+    
   </script>
 </body>
 </html>
