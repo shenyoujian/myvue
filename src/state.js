@@ -1,4 +1,5 @@
 import { observe } from "./observer/index";
+import { proxy } from "./util";
 
 export function initState(vm) {
   //初始化各种数据
@@ -30,6 +31,15 @@ function initData(vm) {    // 数据的初始化操作
   // call vm.data()  
   // 为了能在index.html里的vue实例可以操作data里的数据，把data的引用赋值给vue实例上
   vm._data = data = typeof data == "function" ? data.call(vm) : data
+
+  // 1.当我去vm上取属性时，帮我将属性的取值代理到vm._data上去
+  for (const key in data) {
+    // 代理方法
+    proxy(vm,'_data',key)
+  }
+
+  
+
 
   // 数据劫持的方案 对象Object.defineProperty
   // 数组单独处理

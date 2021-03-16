@@ -15,15 +15,21 @@
       data() {
         return {
           person:{
-            name:'ljs'
+            name:'ljs',
+            hobby:['lanqiu','changge','code']
           }
         }
       }
     })
 
     // console.log(vm._data.person.name)
-    vm._data.person.name = {lastName:'li',firstName:'jiansheng’'}
-    vm._data.person.name.lastName = 'lan'
+    // vm._data.person.name = {lastName:'li',firstName:'jiansheng’'}
+    // vm._data.person.name.lastName = 'lan'
+
+    // vm._data.person.hobby[0] = 'zuqiu'
+    // vm._data.person.hobby.push('abc')
+    // vm._data.person.hobby.concat(['abc'])
+    console.log(vm.person)
     
   </script>
 </body>
